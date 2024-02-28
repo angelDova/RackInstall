@@ -8,23 +8,26 @@ import {
   useScroll,
   motion,
 } from "framer-motion";
-import { ArrowRight, ChevronDown, Menu, User, X } from "lucide-react";
-import Link from "next/link";
-import { Button } from "../ui/button";
+import { ArrowRight, ChevronDown, Menu, UserCircle, X } from "lucide-react";
 import QuoteModal from "../quote-modal";
+import { ModeToggle } from "../ui/mode-toggle";
+import ContactSales from "../contact-sales-btn";
 
 const Navbar = () => {
   return (
     <>
       <FlyoutNav />
       <div
-        className="relative min-h-32 "
-        // style={{
-        //   backgroundImage: "url(/assets/rack-1.jpg)",
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
-      ></div>
+        className="relative min-h-screen"
+        style={{
+          backgroundImage: "url(/assets/preview.webp)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />
+      </div>
+      <div className="h-1/2 bg-neutral-50" />
     </>
   );
 };
@@ -63,30 +66,26 @@ const Logo = ({ color = "white" }: { color?: string }) => {
   // Temp logo from https://logoipsum.com/
   return (
     <div className="flex items-center gap-2">
-      <Link href={"/"}>
-        <span className="text-2xl font-bold" style={{ color }}>
-          AF Rack Installations
-        </span>
-      </Link>
-      <Link href={"/"}>
-        <svg
-          width="50"
-          height="39"
-          viewBox="0 0 50 39"
-          fill={color}
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10"
-        >
-          <path
-            d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-            stopColor={color}
-          ></path>
-          <path
-            d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-            stopColor={color}
-          ></path>
-        </svg>
-      </Link>
+      <span className="text-2xl font-bold" style={{ color }}>
+        AF Rack Installations
+      </span>
+      <svg
+        width="50"
+        height="39"
+        viewBox="0 0 50 39"
+        fill={color}
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-10"
+      >
+        <path
+          d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
+          stopColor={color}
+        ></path>
+        <path
+          d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
+          stopColor={color}
+        ></path>
+      </svg>
     </div>
   );
 };
@@ -155,9 +154,11 @@ const CTAs = () => {
   return (
     <div className="flex items-center gap-3">
       <QuoteModal />
+
       <button className="rounded-lg border-2 border-indigo-300 bg-indigo-300 px-4 py-2 font-semibold text-black transition-colors hover:border-indigo-600 hover:bg-indigo-600 hover:text-white">
         Schedule a Demo
       </button>
+      <ModeToggle />
     </div>
   );
 };
@@ -187,9 +188,8 @@ const AboutUsContent = () => {
         >
           <h3 className="mb-1 font-semibold">Our Services</h3>
           <p className="text-xs">
-            From installation to removal. Here at{" "}
-            <span className="text-indigo-300">AF Rack Installations</span>, we
-            have the right solution for you.
+            From installation to removal, our experts offer a wide range of
+            services to meet your warehouse storage solution
           </p>
         </a>
         <a
@@ -197,23 +197,25 @@ const AboutUsContent = () => {
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">About AF Rack Installations</h3>
-          <p className="text-xs">
-            Get to learn a little more about who we are.
-          </p>
+          <p className="text-xs">Get to learn more about who we are.</p>
         </a>
         <a
           href="#"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">Photo Gallery</h3>
-          <p className="text-xs">View our latest projects.</p>
+          <p className="text-xs">
+            View our latest projects in the photo gallery
+          </p>
         </a>
         <a
           href="#"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">Contact</h3>
-          <p className="text-xs">Get in touch with us.</p>
+          <p className="text-xs">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, quam?
+          </p>
         </a>
       </div>
     </div>
@@ -246,19 +248,17 @@ const PricingContent = () => {
           </a>
         </div>
       </div>
-      <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
-        Contact sales
-      </button>
+      <ContactSales />
     </div>
   );
 };
 
-const ContactContent = () => {
+const CareersContent = () => {
   return (
     <div className="grid w-full grid-cols-12 shadow-xl lg:w-[750px]">
       <div className="col-span-12 flex flex-col justify-between bg-indigo-600 p-6 lg:col-span-4">
         <div className="mb-6">
-          <h2 className="mb-2 text-xl font-semibold text-white">Contact</h2>
+          <h2 className="mb-2 text-xl font-semibold text-white">Careers</h2>
           <p className="text-sm text-indigo-100">
             Placeholder was rated a top place to work by Placeholder.
           </p>
@@ -267,7 +267,7 @@ const ContactContent = () => {
           href="#"
           className="flex items-center gap-1 text-xs text-indigo-200 hover:underline"
         >
-          Contact site <ArrowRight />
+          Careers site <ArrowRight />
         </a>
       </div>
       <div className="col-span-12 grid grid-cols-2 gap-3 bg-white p-6 lg:col-span-8 lg:grid-cols-3">
@@ -441,19 +441,19 @@ export default Navbar;
 
 const LINKS = [
   {
-    text: "About us",
-    href: "about",
+    text: "About Us",
+    href: "/about",
     component: AboutUsContent,
   },
   {
     text: "Pricing",
-    href: "pricing",
+    href: "/pricing",
     component: PricingContent,
   },
   {
     text: "Contact",
     href: "/contact",
-    component: ContactContent,
+    component: CareersContent,
   },
   {
     text: "Documentation",

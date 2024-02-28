@@ -3,12 +3,12 @@ import { AlertCircle } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Button } from "./ui/button";
 
-const QuoteModal = () => {
+const ContactSales = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setIsOpen(true)} variant={"quote"} size={"lg"}>
-        Get a Quote
+      <Button onClick={() => setIsOpen(true)} variant={"sales"} size={"lg"}>
+        Contact Sales
       </Button>
       <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
@@ -73,4 +73,4 @@ const SpringModal = ({
   );
 };
 
-export default QuoteModal;
+export default ContactSales;
