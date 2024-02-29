@@ -1,6 +1,14 @@
 "use client";
 
 import {
+  useMotionValueEvent,
+  AnimatePresence,
+  useScroll,
+  motion,
+  useTransform,
+} from "framer-motion";
+
+import {
   Card,
   CardContent,
   CardDescription,
@@ -13,18 +21,51 @@ import clsx from "clsx";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Beam from "@/components/beam";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import React from "react";
+import { Spotlight } from "@/components/ui/spotlight";
+import { GeminiEffect } from "@/components/ui/gemini-effect";
+import { Bento } from "@/components/ui/bento";
 
 export default function Home() {
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
   return (
     <>
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+      <div
+        className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
+        ref={ref}
+      >
+        <GeminiEffect
+          pathLengths={[
+            pathLengthFirst,
+            pathLengthSecond,
+            pathLengthThird,
+            pathLengthFourth,
+            pathLengthFifth,
+          ]}
+        />
+      </div>
       <HeroParallax products={products} />
 
       <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px]">
-        <h2 className="text-4xl text-center"> Choose what fits you right</h2>
+        <Bento />
+        {/* <h2 className="text-4xl text-center"> Choose what fits you right</h2>
         <p className="text-muted-foreground text-center">
           Our straightforward pricing plans are tailored to meet your needs. If
           {" you're"} not <br />
@@ -80,7 +121,7 @@ export default function Home() {
               </CardFooter>
             </Card>
           ))}
-        </div>
+        </div> */}
       </section>
     </>
   );
