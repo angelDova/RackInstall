@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { pricingCards, products } from "@/lib/constants";
+import { content, pricingCards, products } from "@/lib/constants";
 import clsx from "clsx";
 import { Check } from "lucide-react";
 import Image from "next/image";
@@ -16,6 +16,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Beam from "@/components/beam";
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export default function Home() {
   return (

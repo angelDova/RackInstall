@@ -17,11 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body className={font.className}>
         <main className="h-full">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
+
             {children}
           </ThemeProvider>
         </main>

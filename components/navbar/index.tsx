@@ -7,27 +7,45 @@ import {
   AnimatePresence,
   useScroll,
   motion,
+  useTransform,
 } from "framer-motion";
 import { ArrowRight, ChevronDown, Menu, UserCircle, X } from "lucide-react";
 import QuoteModal from "../quote-modal";
 import { ModeToggle } from "../ui/mode-toggle";
 import ContactSales from "../contact-sales-btn";
+import { GeminiEffect } from "../ui/gemini-effect";
+import Link from "next/link";
 
 const Navbar = () => {
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
   return (
     <>
       <FlyoutNav />
+
       <div
-        className="relative min-h-screen"
-        style={{
-          backgroundImage: "url(/assets/preview.webp)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
+        ref={ref}
       >
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />
+        <GeminiEffect
+          pathLengths={[
+            pathLengthFirst,
+            pathLengthSecond,
+            pathLengthThird,
+            pathLengthFourth,
+            pathLengthFifth,
+          ]}
+        />
       </div>
-      <div className="h-1/2 bg-neutral-50" />
     </>
   );
 };
@@ -407,12 +425,12 @@ const MobileMenu = () => {
             animate={{ x: 0 }}
             exit={{ x: "100vw" }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="fixed left-0 top-0 flex h-screen w-full flex-col bg-white"
+            className="fixed left-0 top-0 flex h-screen w-full flex-col bg-black"
           >
             <div className="flex items-center justify-between p-6">
-              <Logo color="black" />
+              <Logo />
               <button onClick={() => setOpen(false)}>
-                <X className="text-3xl text-neutral-950" />
+                <X className="text-3xl text-white" />
               </button>
             </div>
             <div className="h-screen overflow-y-scroll bg-neutral-100 p-6">
