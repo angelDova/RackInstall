@@ -123,7 +123,7 @@ const SpringModal = ({
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <SignupFormDemo />
+            <SignupFormDemo isOpen={isOpen} setIsOpen={setIsOpen} />
             {/* <AlertCircle className="text-white/10 rotate-12 text-[250px] absolute z-0 -top-24 -left-24" />
             <div className="relative z-10">
               <div className="bg-white w-16 h-16 mb-2 rounded-full text-3xl text-indigo-600 grid place-items-center mx-auto">
