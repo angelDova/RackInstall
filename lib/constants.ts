@@ -149,3 +149,5 @@ export const words = [
     className: "text-blue-500 dark:text-blue-500",
   },
 ];
+
+export const generatedWords = `AF Rack Installations. The Leader in Material Handling Equipment and Services`;

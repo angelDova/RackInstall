@@ -16,7 +16,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { content, pricingCards, products } from "@/lib/constants";
+import {
+  content,
+  generatedWords,
+  pricingCards,
+  products,
+  words,
+} from "@/lib/constants";
 import clsx from "clsx";
 import { Check } from "lucide-react";
 import Image from "next/image";
@@ -28,6 +34,8 @@ import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
 import { GeminiEffect } from "@/components/ui/gemini-effect";
 import { Bento } from "@/components/ui/bento";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export default function Home() {
   const ref = React.useRef(null);
@@ -47,11 +55,29 @@ export default function Home() {
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
-      <div
-        className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
+      <div className="flex flex-col overflow-hidden">
+        <div className="h-[100vh] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]">
+            {/* Radial gradient for the container to give a faded look */}
+          </div>
+          <div className="flex items-center justify-center">
+            <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+              AF Rack Installations
+            </p>
+            <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+              AF Rack Installations
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="h-[30rem] bg-background"></div>
+
+      {/* <div
+        className=" w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
         ref={ref}
-      >
-        <GeminiEffect
+      ></div> */}
+      {/* <GeminiEffect
           pathLengths={[
             pathLengthFirst,
             pathLengthSecond,
@@ -59,11 +85,10 @@ export default function Home() {
             pathLengthFourth,
             pathLengthFifth,
           ]}
-        />
-      </div>
+        /> */}
       <HeroParallax products={products} />
 
-      <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px]">
+      <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px] ">
         <Bento />
         {/* <h2 className="text-4xl text-center"> Choose what fits you right</h2>
         <p className="text-muted-foreground text-center">
@@ -126,3 +151,12 @@ export default function Home() {
     </>
   );
 }
+
+export const users = [
+  {
+    name: "Angel Cordova",
+    designation: "Software Developer",
+    image: "/assets/rack-1.jpg",
+    badge: "Mentor",
+  },
+];

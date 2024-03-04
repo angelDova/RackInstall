@@ -18,41 +18,7 @@ import Link from "next/link";
 import { Spotlight } from "../ui/spotlight";
 
 const Navbar = () => {
-  // const ref = React.useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: ref,
-  //   offset: ["start start", "end start"],
-  // });
-
-  // const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
-  // const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
-  // const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
-  // const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
-  // const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
-  return (
-    <>
-      <FlyoutNav />
-
-      {/* <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
-      <div
-        className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
-        ref={ref}
-      >
-        <GeminiEffect
-          pathLengths={[
-            pathLengthFirst,
-            pathLengthSecond,
-            pathLengthThird,
-            pathLengthFourth,
-            pathLengthFifth,
-          ]}
-        />
-      </div> */}
-    </>
-  );
+  return <FlyoutNav />;
 };
 
 const FlyoutNav = () => {
@@ -65,7 +31,7 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full px-6 text-white 
+      className={`fixed top-0 z-50 w-full  px-6 text-white 
       transition-all duration-300 ease-out lg:px-12
       ${
         scrolled
