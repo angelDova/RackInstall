@@ -60,8 +60,23 @@ export const SignupFormDemo = ({ isOpen, setIsOpen }: SignupFormDemoProps) => {
     },
   });
 
-  const handleSubmit = (data: z.infer<typeof QuoteSchema>) => {
-    console.log(data);
+  const handleSubmit = async (data: z.infer<typeof QuoteSchema>) => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          ...form,
+        }),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      toast.success("Form Submitted!");
+      return res;
+    } catch (error) {
+      console.log("Err", error);
+      toast.error("Something went wrong");
+    }
   };
 
   return (

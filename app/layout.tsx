@@ -10,6 +10,14 @@ const font = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "AF Rack Installations",
   description: "Building future warehouses together",
+  icons: {
+    icon: [
+      {
+        type: "image/svg+xml",
+        url: "/logo.svg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
