@@ -1,3 +1,15 @@
+import Category from "@/components/icons/category";
+import Logs from "@/components/icons/clipboard";
+import Templates from "@/components/icons/cloud_download";
+import Home from "@/components/icons/home";
+import Payment from "@/components/icons/payment";
+import Settings from "@/components/icons/settings";
+import Workflows from "@/components/icons/workflows";
+
+export const clients = [...new Array(10)].map((client, index) => ({
+  href: `/${index + 1}.png`,
+}));
+
 export const pricingCards = [
   {
     title: "Starter",
@@ -28,83 +40,38 @@ export const pricingCards = [
   },
 ];
 
-export const products = [
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-1.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-2.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-3.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-4.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-5.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-6.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-7.jpg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-8.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-9.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-10.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-11.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-12.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-13.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-14.jpeg",
-  },
-  {
-    title: "La Mirada",
-    link: "http://localhost:3000/pricing",
-    thumbnail: "/assets/rack-15.jpeg",
-  },
-];
+// export const products = [
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-1.jpg",
+//   },
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-2.jpg",
+//   },
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-3.jpg",
+//   },
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-4.jpg",
+//   },
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-5.jpg",
+//   },
+//   {
+//     title: "La Mirada",
+//     link: "http://localhost:3000/pricing",
+//     thumbnail: "/assets/rack-6.jpg",
+//   },
+// ];
 
 export const content = [
   {
@@ -151,3 +118,84 @@ export const words = [
 ];
 
 export const generatedWords = `AF Rack Installations. The Leader in Material Handling Equipment and Services`;
+
+export const products = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail: "/assets/rack-1.jpg",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail: "/assets/rack-2.jpg",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail: "/assets/rack-3.jpg",
+  },
+
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail: "/assets/rack-4.jpg",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail: "/assets/rack-5.jpg",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail: "/assets/rack-6.jpg",
+  },
+
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail: "/assets/rack-7.jpg",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail: "/assets/rack-8.jpeg",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail: "/assets/rack-9.jpeg",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail: "/assets/rack-10.jpeg",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail: "/assets/rack-11.jpeg",
+  },
+
+  {
+    title: "Creme Digital",
+    link: "https://cremedigital.com",
+    thumbnail: "/assets/rack-12.jpeg",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://goldenbellsacademy.com",
+    thumbnail: "/assets/rack-13.jpeg",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://invoker.lol",
+    thumbnail: "/assets/rack-14.jpeg",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://efreeinvoice.com",
+    thumbnail: "/rack-15.jpeg",
+  },
+];

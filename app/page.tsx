@@ -1,164 +1,197 @@
-"use client";
-
-import {
-  useMotionValueEvent,
-  AnimatePresence,
-  useScroll,
-  motion,
-  useTransform,
-} from "framer-motion";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  content,
-  generatedWords,
-  pricingCards,
-  products,
-  words,
-} from "@/lib/constants";
-import clsx from "clsx";
-import { Check } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import Beam from "@/components/beam";
+import { CardBody, CardContainer, CardItem } from "@/components/3d-card";
+import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
+import { LampComponent } from "@/components/lamp";
+import { Button } from "@/components/ui/button";
+import { ContainerScroll } from "@/components/ui/container-scroll";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import React from "react";
-import { Spotlight } from "@/components/ui/spotlight";
-import { GeminiEffect } from "@/components/ui/gemini-effect";
-import { Bento } from "@/components/ui/bento";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { AuroraHero } from "@/components/aurora-hero";
+import { clients, products } from "@/lib/constants";
+
+import { CheckIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
-  const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
-  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
-  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
-  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
-  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+  //WIP: remove fault IMAge for home page
   return (
-    <>
-      <AuroraHero />
-      {/* <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
-      <div className="flex flex-col overflow-hidden">
-        <div className="h-[100vh] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"> */}
-      {/* Radial gradient for the container to give a faded look */}
-      {/* </div>
-          <div className="flex items-center justify-center">
-            <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-              AF Rack Installations
-            </p>
-            <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-              AF Rack Installations
-            </p>
-          </div>
+    <main className="flex flex-col items-center justify-center">
+      <section className="relative flex h-screen w-full flex-col items-center !overflow-visible rounded-md bg-neutral-950 antialiased">
+        <div className="absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
+        <div className="mt-[-100px] flex flex-col md:mt-[-50px]">
+          <ContainerScroll
+            titleComponent={
+              <div className="flex flex-col items-center">
+                <Button
+                  size={"lg"}
+                  className="group mb-8 flex w-full items-center justify-center gap-4 rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] p-8 text-2xl transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-neutral-500 sm:w-fit md:mb-0"
+                >
+                  <span className="goup-hover:to-black bg-gradient-to-r from-neutral-500 to-neutral-600 bg-clip-text  font-sans text-transparent group-hover:bg-gradient-to-r group-hover:from-black md:text-center">
+                    Start For Free Today
+                  </span>
+                </Button>
+                <h1 className="bg-gradient-to-b from-white  to-neutral-600 bg-clip-text font-sans text-5xl font-bold text-transparent md:text-8xl">
+                  Build your warehouse with AF Rack Installations
+                </h1>
+              </div>
+            }
+          />
         </div>
-      </div>
-
-      <div className="h-[30rem] bg-background"></div> */}
-
-      {/* <div
-        className=" w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
-        ref={ref}
-      ></div> */}
-      {/* <GeminiEffect
-          pathLengths={[
-            pathLengthFirst,
-            pathLengthSecond,
-            pathLengthThird,
-            pathLengthFourth,
-            pathLengthFifth,
-          ]}
-        /> */}
-      {/* <HeroParallax products={products} /> */}
-
-      <section className="flex min-h-screen justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px] ">
-        <Bento />
-        {/* <h2 className="text-4xl text-center"> Choose what fits you right</h2>
-        <p className="text-muted-foreground text-center">
-          Our straightforward pricing plans are tailored to meet your needs. If
-          {" you're"} not <br />
-          ready to commit you can get started for free.
-        </p>
-
-        <div className="flex justify-center gap-4 flex-wrap mt-6">
-          {pricingCards.map((card) => (
-            //WIP: Wire up free product from stripe
-            <Card
-              key={card.title}
-              className={clsx(
-                "w-[300px] flex flex-col justify-between border-2 hover:border-primary transition duration-500 ease-in-out",
-                {
-                  "": card.title === "Unlimited Saas",
-                }
-              )}
-            >
-              <CardHeader>
-                <CardTitle
-                  className={clsx("", {
-                    "text-muted-foreground": card.title !== "Unlimited Saas",
-                  })}
-                >
-                  {card.title}
-                </CardTitle>
-                <CardDescription>{card.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <span className="text-4xl font-bold">{card.price}</span>
-                <span className="text-muted-foreground">
-                  <span>/Month</span>
-                </span>
-              </CardContent>
-              <CardFooter className="flex flex-col items-start gap-4">
-                <div className="">
-                  {card.features.map((feature) => (
-                    <div className="flex gap-2 items-center" key={feature}>
-                      <Check className="text-muted-foreground" />
-                      <p className="">{feature}</p>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href={`/agency?plan=${card.priceId}`}
-                  className={clsx(
-                    "w-full text-center bg-primary p-2 rounded-md",
-                    { "!bg-muted-foreground": card.title !== "Unlimited Saas" }
-                  )}
-                >
-                  Get Started
-                </Link>
-              </CardFooter>
-            </Card>
-          ))}
-        </div> */}
       </section>
-    </>
+      <section className="mt-[50px]">
+        <InfiniteMovingCards
+          className="md:mt-[18rem]"
+          items={clients}
+          direction="right"
+          speed="slow"
+        />
+      </section>
+      <section>
+        <HeroParallax products={products}></HeroParallax>
+      </section>
+      <section className="mt-[-500px]">
+        <LampComponent />
+        <div className="-mt-72 flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row">
+          <CardContainer className="inter-var ">
+            <CardBody className="group/card relative h-auto  w-3/4 transform rounded-xl border border-black/[0.1] bg-gray-50 p-6 duration-300 ease-in-out dark:border-white/[0.2]  dark:bg-black  hover:dark:border-[#E2CBFF] dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] md:!w-[350px]">
+              <CardItem
+                translateZ="50"
+                className="text-xl font-bold text-neutral-600 dark:text-white "
+              >
+                Hobby
+                <h2 className="text-6xl ">$0</h2>
+              </CardItem>
+              <CardItem
+                translateZ="60"
+                className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-300"
+              >
+                Get a glimpse of what our software is capable of. Just a heads
+                up {"you'll"} never leave us after this!
+                <ul className="my-4 flex flex-col gap-2">
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />3 Free automations
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    100 tasks per month
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    Two-step Actions
+                  </li>
+                </ul>
+              </CardItem>
+              <div className="mt-8 flex items-center justify-between">
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl px-4 py-2 text-xs font-normal dark:text-white"
+                >
+                  Try now →
+                </CardItem>
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
+                >
+                  Get Started Now
+                </CardItem>
+              </div>
+            </CardBody>
+          </CardContainer>
+          <CardContainer className="inter-var ">
+            <CardBody className="group/card relative h-auto  w-3/4 transform rounded-xl border border-black/[0.1] bg-gray-50 p-6 duration-300 ease-in-out dark:bg-black hover:dark:border-[#E2CBFF] dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] md:!w-[350px]">
+              <CardItem
+                translateZ="50"
+                className="text-xl font-bold text-neutral-600 dark:text-white "
+              >
+                Pro Plan
+                <h2 className="text-6xl ">$29</h2>
+              </CardItem>
+              <CardItem
+                translateZ="60"
+                className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-300"
+              >
+                Get a glimpse of what our software is capable of. Just a heads
+                up {"you'll"} never leave us after this!
+                <ul className="my-4 flex flex-col gap-2">
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />3 Free automations
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    100 tasks per month
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    Two-step Actions
+                  </li>
+                </ul>
+              </CardItem>
+              <div className="mt-8 flex items-center justify-between">
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl px-4 py-2 text-xs font-normal dark:text-white"
+                >
+                  Try now →
+                </CardItem>
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
+                >
+                  Get Started Now
+                </CardItem>
+              </div>
+            </CardBody>
+          </CardContainer>
+          <CardContainer className="inter-var ">
+            <CardBody className="group/card relative h-auto w-3/4 transform rounded-xl border border-black/[0.1] bg-gray-50 p-6 duration-300 ease-in-out dark:border-white/[0.2] dark:bg-black  hover:dark:border-[#E2CBFF] dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] md:!w-[350px]">
+              <CardItem
+                translateZ="50"
+                className="text-xl font-bold text-neutral-600 dark:text-white "
+              >
+                Unlimited
+                <h2 className="text-6xl ">$99</h2>
+              </CardItem>
+              <CardItem
+                translateZ="60"
+                className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-300"
+              >
+                Get a glimpse of what our software is capable of. Just a heads
+                up {"you'll"} never leave us after this!
+                <ul className="my-4 flex flex-col gap-2">
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />3 Free automations
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    100 tasks per month
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckIcon />
+                    Two-step Actions
+                  </li>
+                </ul>
+              </CardItem>
+              <div className="mt-8 flex items-center justify-between">
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl px-4 py-2 text-xs font-normal dark:text-white"
+                >
+                  Try now →
+                </CardItem>
+                <CardItem
+                  translateZ={20}
+                  as="button"
+                  className="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
+                >
+                  Get Started Now
+                </CardItem>
+              </div>
+            </CardBody>
+          </CardContainer>
+        </div>
+      </section>
+    </main>
   );
 }
-
-export const users = [
-  {
-    name: "Angel Cordova",
-    designation: "Software Developer",
-    image: "/assets/rack-1.jpg",
-    badge: "Mentor",
-  },
-];

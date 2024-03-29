@@ -28,12 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={font.className}>
-        <main className="h-full bg-background">
+        <main className="h-full bg-background w-full">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
-
             {children}
-            <Toaster richColors />
+            <Toaster richColors position="top-center" />
           </ThemeProvider>
         </main>
       </body>
