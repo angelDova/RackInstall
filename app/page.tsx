@@ -4,6 +4,7 @@ import { LampComponent } from "@/components/lamp";
 import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll";
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { clients, products } from "@/lib/constants";
 
 import { CheckIcon } from "lucide-react";
@@ -19,14 +20,17 @@ export default function Home() {
           <ContainerScroll
             titleComponent={
               <div className="flex flex-col items-center">
-                <Button
-                  size={"lg"}
-                  className="group mb-8 flex w-full items-center justify-center gap-4 rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] p-8 text-2xl transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-neutral-500 sm:w-fit md:mb-0"
-                >
-                  <span className="goup-hover:to-black bg-gradient-to-r from-neutral-500 to-neutral-600 bg-clip-text  font-sans text-transparent group-hover:bg-gradient-to-r group-hover:from-black md:text-center">
-                    Start For Free Today
-                  </span>
-                </Button>
+                <div className="m-10 flex justify-center text-center">
+                  <HoverBorderGradient
+                    containerClassName="rounded-full"
+                    as="button"
+                    className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+                  >
+                    <AceternityLogo />
+                    <span>Get a Quote</span>
+                  </HoverBorderGradient>
+                </div>
+
                 <h1 className="bg-gradient-to-b from-white  to-neutral-600 bg-clip-text font-sans text-5xl font-bold text-transparent md:text-8xl">
                   Build your warehouse with AF Rack Installations
                 </h1>
@@ -195,3 +199,24 @@ export default function Home() {
     </main>
   );
 }
+
+const AceternityLogo = () => {
+  return (
+    <svg
+      width="66"
+      height="65"
+      viewBox="0 0 66 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-3 w-3 text-white"
+    >
+      <path
+        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
+        stroke="currentColor"
+        strokeWidth="15"
+        strokeMiterlimit="3.86874"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
