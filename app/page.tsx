@@ -13,7 +13,7 @@ import Image from "next/image";
 export default function Home() {
   //WIP: remove fault IMAge for home page
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="flex flex-col items-center justify-center w-full">
       <section className="relative flex h-screen w-full flex-col items-center !overflow-visible rounded-md bg-neutral-950 antialiased">
         <div className="absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
         <div className="mt-[-100px] flex flex-col md:mt-[-50px]">

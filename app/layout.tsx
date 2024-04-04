@@ -9,7 +9,7 @@ const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AF Rack Installations",
-  description: "Building future warehouses together",
+  description: "Building the future of warehouses together",
   icons: {
     icon: [
       {
