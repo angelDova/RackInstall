@@ -1,6 +1,7 @@
 import { CardBody, CardContainer, CardItem } from "@/components/3d-card";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 import { LampComponent } from "@/components/lamp";
+import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll";
 import { HeroParallax } from "@/components/ui/hero-parallax";
