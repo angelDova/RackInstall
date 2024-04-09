@@ -18,6 +18,103 @@ export const World = dynamic(
   }
 );
 
+export const Services = [
+  {
+    service: [
+      {
+        id: 1,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 2,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 3,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 4,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 5,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 6,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 7,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 8,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 9,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+      {
+        id: 10,
+        title: "Pallet Racks",
+        slug: "pallet-racks",
+        description: "Complete pallet rack install/teardown provided for you",
+        price: 99.99,
+        isFeatured: true,
+        image: "/assets/rack-1.jpg",
+      },
+    ],
+  },
+];
+
 export const team = [
   {
     id: 1,

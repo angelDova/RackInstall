@@ -1,3 +1,4 @@
+import FeaturedServices from "@/components/sections/featured-services";
 import Hero from "@/components/sections/hero";
 import Team from "@/components/sections/team";
 import Image from "next/image";
@@ -11,7 +12,7 @@ export default function Home() {
           <Image src={"/rack-15.jpeg"} alt="Rack" height={700} width={700} />
         </div>
       </div>
-      {/* <FeaturedCourses /> */}
+      <FeaturedServices />
       {/* <WhyChooseUs /> */}
       {/* <TestimonialCards /> */}
       {/* <UpcomingWebinars /> */}
