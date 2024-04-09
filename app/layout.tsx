@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "sonner";
+import Footer from "@/components/sections/footer";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -30,8 +31,11 @@ export default function RootLayout({
       <body className={font.className}>
         <main className="h-full bg-background w-full">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Navbar />
+            <div className="relative flex w-full items-center justify-center">
+              <Navbar />
+            </div>
             {children}
+            <Footer />
             <Toaster richColors position="top-center" />
           </ThemeProvider>
         </main>

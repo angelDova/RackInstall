@@ -75,7 +75,7 @@ const QuoteModal = () => {
 
   return (
     <>
-      <Button onClick={() => setIsOpen(true)} variant={"quote"} size={"lg"}>
+      <Button onClick={() => setIsOpen(true)} variant={"ghost"} size={"lg"}>
         Get a Quote
       </Button>
       <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
