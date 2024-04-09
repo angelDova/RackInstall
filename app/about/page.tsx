@@ -1,13 +1,18 @@
 "use client";
 
-import { Globe, World } from "@/components/globe";
-import React from "react";
+// import { Globe, World } from "@/components/globe";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TracingBeam } from "@/components/tracing-beam";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 type Props = {};
+
+const World = dynamic(() => import("@/components/globe").then((m) => m.World), {
+  ssr: false,
+});
 
 const AboutUs = (props: Props) => {
   return (
