@@ -7,7 +7,7 @@ const ContactSales = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setIsOpen(true)} variant={"sales"} size={"lg"}>
+      <Button onClick={() => setIsOpen(true)} size={"lg"}>
         Contact Sales
       </Button>
       <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
