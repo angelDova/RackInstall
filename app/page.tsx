@@ -1,6 +1,8 @@
+import { BentoGridThirdDemo } from "@/components/sections/bento";
 import FeaturedServices from "@/components/sections/featured-services";
 import Hero from "@/components/sections/hero";
 import Team from "@/components/sections/team";
+import { Bento } from "@/components/ui/bento";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
         </div>
       </div>
       <FeaturedServices />
+      <BentoGridThirdDemo />
       {/* <WhyChooseUs /> */}
       {/* <TestimonialCards /> */}
       {/* <UpcomingWebinars /> */}
