@@ -4,20 +4,7 @@ import React from "react";
 import priceData from "@/data/prices-data.json";
 import Image from "next/image";
 
-interface Price {
-  prices: {
-    id: number;
-    title: string;
-    slug: string;
-    description: string;
-    price: number;
-    instructor: string;
-    isFeatured: boolean;
-    image: string;
-  }[];
-}
-
-const page = ({ prices }: Price) => {
+const page = () => {
   return (
     <div className="min-h-screen bg-neutral-950 sm:py-12 sm:pt-24">
       {/* <h1 className="mb-8 text-center font-sans text-lg font-bold text-white md:text-7xl">
