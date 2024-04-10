@@ -31,7 +31,7 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full  px-6 text-white 
+      className={`fixed top-0 z-50 w-full px-6 text-white 
       transition-all duration-300 ease-out lg:px-12
       ${
         scrolled

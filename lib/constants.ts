@@ -37,7 +37,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-2.jpg",
       },
       {
         id: 3,
@@ -46,7 +46,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-3.jpg",
       },
       {
         id: 4,
@@ -55,7 +55,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-11.jpeg",
       },
       {
         id: 5,
@@ -64,7 +64,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-12.jpeg",
       },
       {
         id: 6,
@@ -73,7 +73,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-13.jpeg",
       },
       {
         id: 7,
@@ -82,7 +82,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-7.jpg",
       },
       {
         id: 8,
@@ -91,7 +91,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-8.jpeg",
       },
       {
         id: 9,
@@ -100,7 +100,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-9.jpeg",
       },
       {
         id: 10,
@@ -109,7 +109,7 @@ export const Services = [
         description: "Complete pallet rack install/teardown provided for you",
         price: 99.99,
         isFeatured: true,
-        image: "/assets/rack-1.jpg",
+        image: "/assets/rack-10.jpeg",
       },
     ],
   },
