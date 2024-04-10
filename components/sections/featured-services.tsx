@@ -48,18 +48,17 @@ function FeaturedServices() {
                         {service.description}
                       </span>
                     </div>
-                    <Link href={"/pricing"}>
-                      {service.image && (
-                        <div className="flex flex-1 w-full rounded-lg mt-4">
-                          <Image
-                            src={service.image}
-                            alt="thumnail"
-                            height={250}
-                            width={270}
-                          />
-                        </div>
-                      )}
-                    </Link>
+
+                    {service.image && (
+                      <div className="flex flex-1 w-full rounded-lg mt-4">
+                        <Image
+                          src={service.image}
+                          alt="thumnail"
+                          height={250}
+                          width={270}
+                        />
+                      </div>
+                    )}
                   </div>
                 </PinContainer>
               </div>
