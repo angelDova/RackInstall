@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
 
 export const PinContainer = ({
   children,
@@ -55,9 +54,8 @@ export const PinContainer = ({
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
       </div>
-      <Link href={"/pricing"}>
-        <PinPerspective title={title} href={href} />
-      </Link>
+
+      <PinPerspective title={title} href={href} />
     </div>
   );
 };

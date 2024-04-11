@@ -8,7 +8,7 @@ import Link from "next/link";
 interface Service {
   id: number;
   title: string;
-  slug: string;
+  // slug: string;
   description: string;
   price: number;
   image?: string;
@@ -16,7 +16,7 @@ interface Service {
 }
 
 function FeaturedServices() {
-  const ServiceData = Services.map((category) => category.service)
+  const PricesData = Services.map((category) => category.service)
     .flat() // flatten the array of arrays into a single array
     .filter((service: Service) => service.isFeatured);
 
@@ -34,10 +34,10 @@ function FeaturedServices() {
       </div>
       <div className="mt-10 flex justify-center">
         <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3">
-          {ServiceData.map((service: Service) => (
+          {PricesData.map((service: Service) => (
             <div className="flex justify-center" key={service.id}>
               <div className="h-[25rem] sm:h-[30rem] max-w-2xl flex items-center justify-center ">
-                <PinContainer title="/rack-instal.vercel.app">
+                <PinContainer title="rack-install.vercel.app" href="/pricing">
                   <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
                     <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                       {service.title}
