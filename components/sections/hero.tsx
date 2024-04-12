@@ -66,6 +66,7 @@ const Hero = () => {
             <br />
             Worlwide Material Handling Leader
           </h1>
+
           <p className="mx-auto mt-4 max-w-lg text-base font-normal text-neutral-300 md:text-lg">
             Dive into our comprehensive music courses and transform your musical
             journey today. Whether you&apos;re a beginner or looking to refine

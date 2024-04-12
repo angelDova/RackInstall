@@ -193,7 +193,7 @@ const AboutUsContent = () => {
           </p>
         </div>
         <a
-          href="#"
+          href="/about"
           className="flex items-center gap-1 text-xs text-indigo-300 hover:underline"
         >
           Learn more <ArrowRight />
@@ -282,10 +282,10 @@ const CareersContent = () => {
           </p>
         </div>
         <a
-          href="#"
+          href="/contact"
           className="flex items-center gap-1 text-xs text-indigo-200 hover:underline"
         >
-          Careers site <ArrowRight />
+          Contact Us <ArrowRight />
         </a>
       </div>
       <div className="col-span-12 grid grid-cols-2 gap-3 bg-white p-6 lg:col-span-8 lg:grid-cols-3">
