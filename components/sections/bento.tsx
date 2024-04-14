@@ -12,10 +12,34 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { TypewriterEffect } from "../ui/typewriter-effect";
+
+const words = [
+  {
+    text: "Build",
+  },
+  {
+    text: "your",
+  },
+  {
+    text: "future",
+  },
+  {
+    text: "warehouse",
+  },
+  {
+    text: "with",
+  },
+  {
+    text: "AF Rack Installations.",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+];
 
 export function BentoGridDemo() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-y-24">
+      <TypewriterEffect words={words} className="mt-20" />
       <BentoGrid className="max-w-4xl mx-auto">
         {items.map((item, i) => (
           <BentoGridItem
