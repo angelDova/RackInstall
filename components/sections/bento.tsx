@@ -31,7 +31,15 @@ const words = [
     text: "with",
   },
   {
-    text: "AF Rack Installations.",
+    text: "AF",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+  {
+    text: "Rack",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+  {
+    text: "Installations.",
     className: "text-blue-500 dark:text-blue-500",
   },
 ];
