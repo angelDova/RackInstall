@@ -1,12 +1,16 @@
+"use client";
+
 import { BackgroundBeams } from "@/components/background-beams";
-import React from "react";
+import { SignupFormDemo } from "@/components/form/quote-form";
+import React, { useState } from "react";
 
 type Props = {};
 
 const Contact = (props: Props) => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <div className="min-h-screen py-12 pt-24 border border-t-white  bg-black/[0.96] antialiased bg-grid-white/[0.02]">
-      <div className="min-h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+      <div className="min-h-screen w-full rounded-md relative flex flex-col items-center justify-center antialiased">
         <div className="max-w-2xl mx-auto p-4">
           <h1 className="relative z-10 text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
             Contact Us
