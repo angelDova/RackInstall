@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import ContactButton from "./_components/contact-button";
 
 type Props = {};
 
@@ -88,113 +89,10 @@ const Contact = (props: Props) => {
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit.
           </p>
-          <div className="mx-auto mt-10 w-full max-w-md rounded-none bg-white p-4 shadow-input dark:bg-black md:rounded-2xl md:p-8">
-            <Form {...form}>
-              <form className="my-8" onSubmit={form.handleSubmit(handleSubmit)}>
-                <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel htmlFor="firstname">First name</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            id="firstname"
-                            placeholder="John"
-                            type="text"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel htmlFor="lastname">Last name</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            id="firstname"
-                            placeholder="Doe"
-                            type="text"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="mb-4">
-                      <FormLabel htmlFor="email">Email Address</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          id="email"
-                          placeholder="musicalgenius@info.com"
-                          type="email"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
 
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem className="mb-4">
-                      <FormLabel htmlFor="phone">Phone Number</FormLabel>
-                      <FormControl>
-                        <Input {...field} id="phone" type="text" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="mb-8">
-                      <FormLabel htmlFor="message">Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          {...field}
-                          id="message"
-                          placeholder="Please enter your project details"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-
-                <div className="flex gap-2">
-                  <button
-                    className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                    type="submit"
-                  >
-                    Submit &rarr;
-                    <BottomGradient />
-                  </button>
-                </div>
-              </form>
-            </Form>
-          </div>
           <BackgroundBeams />
         </div>
+        <ContactButton />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "sonner";
 import Footer from "@/components/sections/footer";
+import CustomModal from "@/components/modal/contact-modal";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -34,6 +35,11 @@ export default function RootLayout({
             <div className="relative flex w-full items-center justify-center">
               <Navbar />
             </div>
+            <CustomModal
+              title={"Create a Workflow Automation"}
+              description="Workflows are a powerful tool that help you automate tasks"
+              defaultOpen={false}
+            />
             {children}
             <Footer />
             <Toaster richColors position="top-center" />
