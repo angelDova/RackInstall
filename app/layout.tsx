@@ -36,8 +36,9 @@ export default function RootLayout({
               <Navbar />
             </div>
             <CustomModal
-              title={"Create a Workflow Automation"}
-              description="Workflows are a powerful tool that help you automate tasks"
+              title={"Send us a Message"}
+              description=" Please fill out the form below and we will usually respond to your
+              inquiry on the same business day."
               defaultOpen={false}
             />
             {children}

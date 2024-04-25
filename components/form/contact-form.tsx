@@ -24,6 +24,7 @@ import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useModal } from "@/providers/modal-provider";
+import { Textarea } from "../ui/textarea";
 
 type Props = {
   title?: string;
@@ -107,7 +108,7 @@ const ContactForm = ({ subTitle, title }: Props) => {
               name="firstName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Full Name</FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="Name" />
                   </FormControl>
@@ -116,14 +117,17 @@ const ContactForm = ({ subTitle, title }: Props) => {
               )}
             />
             <FormField
-              disabled={isLoading}
               control={form.control}
               name="message"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Description</FormLabel>
+                <FormItem className="mb-8">
+                  <FormLabel htmlFor="message">Message</FormLabel>
                   <FormControl>
-                    <Input placeholder="Description" {...field} />
+                    <Textarea
+                      {...field}
+                      id="message"
+                      placeholder="Please enter your project details"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -132,10 +136,10 @@ const ContactForm = ({ subTitle, title }: Props) => {
             <Button className="mt-4" disabled={isLoading} type="submit">
               {isLoading ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Saving
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending
                 </>
               ) : (
-                "Save Settings"
+                "Send"
               )}
             </Button>
           </form>
