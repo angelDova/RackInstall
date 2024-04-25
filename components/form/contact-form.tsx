@@ -101,7 +101,10 @@ const ContactForm = ({ subTitle, title }: Props) => {
       )}
       <CardContent>
         <Form {...form}>
-          <form onSubmit={() => {}} className="flex flex-col gap-4 text-left">
+          <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="flex flex-col gap-4 text-left"
+          >
             <FormField
               disabled={isLoading}
               control={form.control}
