@@ -86,7 +86,7 @@ const ContactForm = ({ subTitle, title }: Props) => {
       toast.success("Form Submitted!");
       return res;
     } catch (error) {
-      console.log("Err", error);
+      console.log("Error", error);
       toast.error("Something went wrong");
     }
   };
