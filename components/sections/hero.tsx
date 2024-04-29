@@ -104,9 +104,9 @@ const Hero = () => {
               }}
               className="mx-auto mt-4 max-w-lg text-base font-normal text-neutral-300 md:text-lg"
             >
-              Dive into our comprehensive music courses and transform your
-              musical journey today. Whether you&apos;re a beginner or looking
-              to refine your skills, join us to unlock your true potential.
+              Dive into how AF Rack Installations helps our clients achieve
+              there material handling Needs. From rack install to teardown, we
+              have the right solution for you.
             </motion.p>
             <div className="mt-4 flex flex-col items-center justify-between">
               <>
